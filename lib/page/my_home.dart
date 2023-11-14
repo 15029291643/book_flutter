@@ -85,6 +85,13 @@ class _MyHomeState extends State<MyHome> {
             controller: _controller,
           ),
           Text('输入内容：${_controller.text}'),
+          ElevatedButton(
+              onPressed: () {
+
+
+              },
+              child: Text('输入内容')),
+
         ],
       ),
     );
