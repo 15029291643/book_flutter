@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:novel/utils/ShowUtil.dart';
 
 Future<void> main() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
@@ -78,9 +79,12 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             // If the Future is complete, display the preview.
+            ShowUtil.myPrint('FutureBuilder');
             return CameraPreview(_controller);
           } else {
             // Otherwise, display a loading indicator.
+            ShowUtil.myPrint('CircularProgressIndicator');
+
             return const Center(child: CircularProgressIndicator());
           }
         },
